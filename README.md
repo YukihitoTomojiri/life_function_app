@@ -1,24 +1,102 @@
-# README
+# Life Function App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+---
+LifeFunctionAppは、実際にリリースするものではなく、ポートフォリオとして採用担当者様にご覧いただくことを目的としているソリューションです。個人情報保護や著作権に関して考慮されていません。
 
-Things you may want to cover:
+-----
+目次
+1. ペルソナ
+2. ユーザーストーリー
+3. テーブル設計
+4. ER図
 
-* Ruby version
+-----
+# 1. ペルソナ
+- 職業は「医療・介護従事者」
+- 医療・介護従事者の方を考えているので「性別は女性」「年齢は20~60代」
 
-* System dependencies
+-----
+# 2. ユーザーストーリー  
 
-* Configuration
+- ユーザーの問題点  
+  - 外来受診や入院時及び施設入所時の認知機能検査、運動機能検査に時間が掛かる。
+  - 認知症があるのか分からないが、1人暮らしで生活をしていたので患者が服薬管理をした。しかし、適切に服薬できていなかった。
+  - 下肢筋力低下があるが、ポータブルトイレを設置し、夜間転倒してしまった。  
 
-* Database creation
+- 課題解決
+  - 検査時間の短縮が必要。
+  - PCでもタブレットでも情報共有される。
+  - ipadなどタブレット端末を利用したアプリケーションで準備物を少なくする。
 
-* Database initialization
+- 解決に必要な機能  
+  - 同一施設ならば利用者の一覧を表示し検索できる機能
+  - ユーザー（医療介護者）と利用者の管理機能
+  - 検査結果を比較できる機能
 
-* How to run the test suite
+  - UIについて準備物の簡素化についての機能
+    - ipadなどタブレット端末を意識したUI設計
+    - JavaScriptを用いてタイマーやストップウォッチ機能
+    - 設問の内容上、画像を表示し、一時的に隠し、クリックしたら再表示できる機能
+    - 音声録音機能
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+---
+# 3. テーブル設計
+## Users table
+| Columns     | Type   | Options                   |
+|-------------|--------|---------------------------|
+| name        | string | nill: false               |
+| email       | string | nill: false, unique: true |
+| password    | string | nill: false               |
+| facility    | string | nill: false               |
+| affiliation | string |                           |
+## Association
+- has_many: patients
+- has_many: Hasegawa_dimentia_scale
+-----
+## Patients table
+| Columns           | Type      | Options                        |
+|-------------------|-----------|--------------------------------|
+| patient_name      | string    | nill: false                    |
+| gender_id         | integer   | nill: false                    |
+| birthday          | date      | nill: false                    |
+| care_certified_id | integer   | nill: false                    |
+| prefecture_id     | integer   | nill: false                    |
+| user              | reference | null: false, foreign_key: true |
+## Association
+- has_many: Hasegawa_dimentia_scale
+- belongs_to: users
+- belongs_to_active_hash: gender
+- belongs_to_active_hash: care_certified
+- belongs_to_active_hash: prefecture
+-----
+## Hasegawa_dimentia_scale table
+| Columns           | Type      | Options                        |
+|-------------------|-----------|--------------------------------|
+| testing_date      | date      | nill: false                    |
+| testing_place     | string    |                                |
+| question_1        | integer   | nill: false                    |
+| question_2_1      | integer   | nill: false                    |
+| question_2_2      | integer   | nill: false                    |
+| question_2_3      | integer   | nill: false                    |
+| question_2_4      | integer   | nill: false                    |
+| question_3        | integer   | nill: false                    |
+| question_4_1      | integer   | nill: false                    |
+| question_4_2      | integer   | nill: false                    |
+| question_4_3      | integer   | nill: false                    |
+| question_5_1      | integer   | nill: false                    |
+| question_5_2      | integer   | nill: false                    |
+| question_6_1      | integer   | nill: false                    |
+| question_6_2      | integer   | nill: false                    |
+| question_7_1      | integer   | nill: false                    |
+| question_7_2      | integer   | nill: false                    |
+| question_7_3      | integer   | nill: false                    |
+| question_8        | integer   | nill: false                    |
+| question_9        | integer   | nill: false                    |
+| question_9_memo   | integer   |                                |
+| total_score       | integer   | nill: false                    |
+| user              | reference | null: false, foreign_key: true |
+| patient           | reference | null: false, foreign_key: true |
+### Association
+- belongs_to: patient
+- belongs_to: users
+-----

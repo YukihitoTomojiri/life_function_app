@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LifeFunctionApp</title>
-</head>
-<header>
-  <%= render "shared/header" %>
-</header>
-<body>
-  <h2>利用者一覧</h2>
+<%= render "shared/header" %>
 
-</body>
-</html>
+<div class='main'>
+  <div class='title'>
+    <h2>利用者一覧</h2>
+  </div>
+  <div class="contents row">
+    <%# @tweets.each do |tweet| %>
+      <%#= render partial: "tweet", locals: { tweet: tweet } %>
+    <%# end %>
+    <ul class="patient-name">
+    <p>患者名A</p>
+    <p>患者名A</p>
+    <p>患者名A</p>
+    <p>患者名A</p>
+    <p>患者名A</p>
+    <p>患者名A</p>
+    <p>患者名A</p>
+    </ul>
+  </div>
+</div>
+
+

@@ -44,7 +44,8 @@ LifeFunctionAppは、実際にリリースするものではなく、ポート�
 ## Users table
 | Columns     | Type   | Options                   |
 |-------------|--------|---------------------------|
-| name        | string | null: false               |
+| first_name  | string | null: false               |
+| last_name   | string | null: false               |
 | email       | string | null: false, unique: true |
 | password    | string | null: false               |
 | facility    | string | null: false               |
@@ -54,14 +55,17 @@ LifeFunctionAppは、実際にリリースするものではなく、ポート�
 - has_many: Hasegawa_dimentia_scale
 -----
 ## Patients table
-| Columns           | Type      | Options                        |
-|-------------------|-----------|--------------------------------|
-| patient_name      | string    | null: false                    |
-| gender_id         | integer   | null: false                    |
-| birthday          | date      | null: false                    |
-| care_certified_id | integer   | null: false                    |
-| prefecture_id     | integer   | null: false                    |
-| user              | reference | null: false, foreign_key: true |
+| Columns                 | Type      | Options                        |
+|-------------------------|-----------|--------------------------------|
+| patient_first_name      | string    | null: false                    |
+| patient_last_name       | string    | null: false                    |
+| patient_first_name_kana | string    | null: false                    |
+| patient_last_name_kana  | string    | null: false                    |
+| gender_id               | integer   | null: false                    |
+| birthday                | date      | null: false                    |
+| care_certified_id       | integer   | null: false                    |
+| prefecture_id           | integer   | null: false                    |
+| user                    | reference | null: false, foreign_key: true |
 ## Association
 - has_many: Hasegawa_dimentia_scale
 - belongs_to: users

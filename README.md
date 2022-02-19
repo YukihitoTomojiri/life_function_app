@@ -44,10 +44,10 @@ LifeFunctionAppは、実際にリリースするものではなく、ポート�
 ## Users table
 | Columns     | Type   | Options                   |
 |-------------|--------|---------------------------|
-| name        | string | nill: false               |
-| email       | string | nill: false, unique: true |
-| password    | string | nill: false               |
-| facility    | string | nill: false               |
+| name        | string | null: false               |
+| email       | string | null: false, unique: true |
+| password    | string | null: false               |
+| facility    | string | null: false               |
 | affiliation | string |                           |
 ## Association
 - has_many: patients
@@ -56,11 +56,11 @@ LifeFunctionAppは、実際にリリースするものではなく、ポート�
 ## Patients table
 | Columns           | Type      | Options                        |
 |-------------------|-----------|--------------------------------|
-| patient_name      | string    | nill: false                    |
-| gender_id         | integer   | nill: false                    |
-| birthday          | date      | nill: false                    |
-| care_certified_id | integer   | nill: false                    |
-| prefecture_id     | integer   | nill: false                    |
+| patient_name      | string    | null: false                    |
+| gender_id         | integer   | null: false                    |
+| birthday          | date      | null: false                    |
+| care_certified_id | integer   | null: false                    |
+| prefecture_id     | integer   | null: false                    |
 | user              | reference | null: false, foreign_key: true |
 ## Association
 - has_many: Hasegawa_dimentia_scale
@@ -72,28 +72,28 @@ LifeFunctionAppは、実際にリリースするものではなく、ポート�
 ## Hasegawa_dimentia_scale table
 | Columns           | Type      | Options                        |
 |-------------------|-----------|--------------------------------|
-| testing_date      | date      | nill: false                    |
+| testing_date      | date      | null: false                    |
 | testing_place     | string    |                                |
-| question_1        | integer   | nill: false                    |
-| question_2_1      | integer   | nill: false                    |
-| question_2_2      | integer   | nill: false                    |
-| question_2_3      | integer   | nill: false                    |
-| question_2_4      | integer   | nill: false                    |
-| question_3        | integer   | nill: false                    |
-| question_4_1      | integer   | nill: false                    |
-| question_4_2      | integer   | nill: false                    |
-| question_4_3      | integer   | nill: false                    |
-| question_5_1      | integer   | nill: false                    |
-| question_5_2      | integer   | nill: false                    |
-| question_6_1      | integer   | nill: false                    |
-| question_6_2      | integer   | nill: false                    |
-| question_7_1      | integer   | nill: false                    |
-| question_7_2      | integer   | nill: false                    |
-| question_7_3      | integer   | nill: false                    |
-| question_8        | integer   | nill: false                    |
-| question_9        | integer   | nill: false                    |
+| question_1        | integer   | null: false                    |
+| question_2_1      | integer   | null: false                    |
+| question_2_2      | integer   | null: false                    |
+| question_2_3      | integer   | null: false                    |
+| question_2_4      | integer   | null: false                    |
+| question_3        | integer   | null: false                    |
+| question_4_1      | integer   | null: false                    |
+| question_4_2      | integer   | null: false                    |
+| question_4_3      | integer   | null: false                    |
+| question_5_1      | integer   | null: false                    |
+| question_5_2      | integer   | null: false                    |
+| question_6_1      | integer   | null: false                    |
+| question_6_2      | integer   | null: false                    |
+| question_7_1      | integer   | null: false                    |
+| question_7_2      | integer   | null: false                    |
+| question_7_3      | integer   | null: false                    |
+| question_8        | integer   | null: false                    |
+| question_9        | integer   | null: false                    |
 | question_9_memo   | integer   |                                |
-| total_score       | integer   | nill: false                    |
+| total_score       | integer   | null: false                    |
 | user              | reference | null: false, foreign_key: true |
 | patient           | reference | null: false, foreign_key: true |
 ### Association

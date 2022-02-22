@@ -25,8 +25,8 @@
       <span class="indispensable">必須</span>
     </div>
     <div class='input-name-wrap'>
-      <%= f.text_area :last_name_kanji, class:"input-name", id:"last-name", placeholder:"例) 山田" %>
-      <%= f.text_area :first_name_kanji, class:"input-name", id:"first-name", placeholder:"例) 陸太郎" %>
+      <%= f.text_area :last_name, class:"input-name", id:"last-name", placeholder:"例) 山田" %>
+      <%= f.text_area :first_name, class:"input-name", id:"first-name", placeholder:"例) 陸太郎" %>
     </div>
   </div>
 
@@ -49,7 +49,7 @@
     <div class='input-birth-wrap'>
       <%= raw sprintf(
                   f.date_select(
-                    :birth_day,
+                    :birthday,
                     class:'select-birth',
                     id:"birth-day",
                     use_month_numbers: true,
@@ -66,14 +66,14 @@
       <label class="form-text">施設名</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.email_field :facility, class:"input-default", id:"facility", placeholder:"施設名" %>
+    <%= f.text_area :facility, class:"input-default", id:"facility", placeholder:"施設名" %>
   </div>
 
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">所属</label>
     </div>
-    <%= f.email_field :affiliation, class:"input-default", id:"affiliation", placeholder:"所属" %>
+    <%= f.text_area :affiliation, class:"input-default", id:"affiliation", placeholder:"所属" %>
     <p class='info-text'>※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。</p>
   </div>
 

@@ -42,14 +42,17 @@ LifeFunctionAppは、実際にリリースするものではなく、ポート�
 ---
 # 3. テーブル設計
 ## Users table
-| Columns     | Type   | Options                   |
-|-------------|--------|---------------------------|
-| first_name  | string | null: false               |
-| last_name   | string | null: false               |
-| email       | string | null: false, unique: true |
-| password    | string | null: false               |
-| facility    | string | null: false               |
-| affiliation | string |                           |
+| Columns          | Type   | Options                   |
+|------------------|--------|---------------------------|
+| first_name       | string | null: false               |
+| last_name        | string | null: false               |
+| first_name_kana  | string | null: false               |
+| last_name_kana   | string | null: false               |
+| birthday         | date   | null: false               |
+| email            | string | null: false, unique: true |
+| password         | string | null: false               |
+| facility         | string | null: false               |
+| affiliation      | string |                           |
 ## Association
 - has_many: patients
 - has_many: Hasegawa_dimentia_scale

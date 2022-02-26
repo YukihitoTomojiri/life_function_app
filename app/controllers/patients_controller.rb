@@ -1,6 +1,7 @@
 class PatientsController < ApplicationController
   # before_action :move_to_index, except: [:index, :show]
   def index
+    @patients = Patient.all
   end
 
   def new

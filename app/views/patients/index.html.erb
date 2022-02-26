@@ -1,22 +1,23 @@
 <%= render "shared/header" %>
 
 <div class='main'>
-  <%= link_to "患者登録", new_patient_path%>
-  <div class='title'>
-    <h2>利用者一覧</h2>
+
+  <div class="title-contents">
+    <ul class="title">
+      <li><h2>利用者一覧</h2></li>
+      <li><%= link_to "患者登録", new_patient_path, class: "patient-new" %></li>
+    </ul>
   </div>
-  <div class="contents row">
-    <%# @tweets.each do |tweet| %>
-      <%#= render partial: "tweet", locals: { tweet: tweet } %>
-    <%# end %>
+
+  <div class="contents-row">
     <ul class="patient-name">
-    <p>患者名A</p>
-    <p>患者名A</p>
-    <p>患者名A</p>
-    <p>患者名A</p>
-    <p>患者名A</p>
-    <p>患者名A</p>
-    <p>患者名A</p>
+      <% @patients.each do |patient| %>
+        <div class="patient_post">
+          <%= link_to patient.patient_last_name + " " + patient.patient_first_name, "#" %>
+          <%= link_to patient.care_certified.name %>
+          <%= image_tag "account_icon.svg" %>
+        </div>
+      <% end %>
     </ul>
   </div>
 </div>

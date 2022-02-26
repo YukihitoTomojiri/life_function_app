@@ -1,0 +1,56 @@
+<%= render "shared/header" %>
+
+<%# 商品の概要 %>
+<div class="patient-show">
+  <div class="patient-box">
+    <h2 class="name">
+      <%= @patient.patient_last_name + @patient.patient_first_name %>
+    </h2>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">担当者</th>
+          <td class="detail-value"><%= @patient.user.last_name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">誕生日</th>
+          <td class="detail-value"><%= @patient.birthday %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">性別</th>
+          <td class="detail-value"><%= @patient.gender.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">介護認定</th>
+          <td class="detail-value"><%= @patient.care_certified.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">住所</th>
+          <td class="detail-value"><%= @patient.prefecture.name %></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <%# /商品の概要 %>
+
+  <div class="content-box">
+    <h2 class="name">
+      < 認知機能評価 >
+    </h2>
+    <div class="contents-row">
+      <ul class="hdsr-lists">
+        <%# @patients.each do |patient| %>
+          <div class="patient_post">
+            ◯月◯日
+            <%#= link_to patient.patient_last_name + " " + patient.patient_first_name, "#" %>
+            <%#= link_to patient.care_certified.name %>
+            <%#= image_tag "account_icon.svg" %>
+          </div>
+        <%# end %>
+      </ul>
+      <%= link_to "戻る", "/" %>
+    </div>
+
+
+<%#= render "shared/footer" %>

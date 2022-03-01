@@ -42,7 +42,7 @@
       <ul class="hdsr-lists">
         <%# @patients.each do |patient| %>
           <div class="patient_post">
-            ◯月◯日
+            <%= link_to "◯月◯日", patient_hdsrs_path(@patient.id) %>
             <%#= link_to patient.patient_last_name + " " + patient.patient_first_name, "#" %>
             <%#= link_to patient.care_certified.name %>
             <%#= image_tag "account_icon.svg" %>

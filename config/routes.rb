@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'hdsrs/index'
-  get 'hdsrs/create'
   devise_for :users
   root to: 'patients#index'
   resources :patients, only: [:index, :new, :create, :show] do
-    resources :hdsrs, only: [:index, :create] 
+    resources :hdsr_logs, only: [:index, :create] 
   end
 
 

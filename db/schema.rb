@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2022_03_01_121440) do
     t.integer "answer_2_3", null: false
     t.integer "answer_2_4", null: false
     t.integer "answer_3", null: false
+    t.integer "selection_series", null: false
     t.integer "answer_4_1", null: false
     t.integer "answer_4_2", null: false
     t.integer "answer_4_3", null: false

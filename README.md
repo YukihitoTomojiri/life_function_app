@@ -87,6 +87,7 @@ LifeFunctionAppは、実際にリリースするものではなく、ポート�
 | answer_2_3        | integer   | null: false                    |
 | answer_2_4        | integer   | null: false                    |
 | answer_3          | integer   | null: false                    |
+| selection_series  | integer   | null: false                    |
 | answer_4_1        | integer   | null: false                    |
 | answer_4_2        | integer   | null: false                    |
 | answer_4_3        | integer   | null: false                    |

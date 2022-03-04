@@ -1,0 +1,136 @@
+<%= render "shared/header" %>
+
+<div class="hdsr-log-index">
+  <div class="hdsr-log-title-contents">
+    <h2 class="hdsr-log-sell-title">項目を選択し入力してください</h2>
+  </div>
+  <div class="hdsr-log-table-contents">
+    <%= form_with model: @hdsr_patient, url: patient_hdsr_logs_path, local: true do |f| %>
+      <%= render partial: 'shared/error_messages', locals:{ model: @hdsr_patient} %>
+      <table class="hdsr-table">
+        <tbody>
+          <tr>
+            <th class="hdsr-item">1</th>
+            <td class="hdsr-text">
+              お年はいくつですか？（2年までの誤差は正解）
+            </td>
+            <td class="hdsr-value">
+              <%= f.collection_radio_buttons(:answer_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-1"}) %>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="hdsr-item">2</th>
+            <td class="hdsr-text">
+              今日は何年の何月何日ですか？何曜日ですか？<br>
+              （年月日、曜日が正解でそれぞれ1点ずつ）
+            </td>
+            <td class="hdsr-value">
+              <%= f.collection_radio_buttons(:answer_2_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-2-1"}) %>
+              <%= f.collection_radio_buttons(:answer_2_2, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-2-2"}) %>
+              <%= f.collection_radio_buttons(:answer_2_3, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-2-3"}) %>
+              <%= f.collection_radio_buttons(:answer_2_4, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-2-4"}) %>
+            </td>
+          </tr>
+          <tr>
+            <th class="hdsr-item">3</th>
+            <td class="hdsr-text">
+              私たちが今いるところはどこですか？<br>
+              （自発的に出れば2点、5秒おいて家ですか？ 病院ですか？ 施設ですか？の中から正しい選択をすれば1点）
+            </td>
+            <td class="hdsr-value">
+              <%= f.collection_radio_buttons(:answer_3, Answer0to2.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-3"}) %>
+            </td>
+          </tr>
+          <tr>
+            <th class="hdsr-item">4</th>
+            <td class="hdsr-text">
+              これから言う3つの言葉を言ってみてください。後で聞きますのでよく覚えておいてください。<br>
+              （以下の系列でいずれか1つで、採用した系列を選択する）<br>
+              <%= f.collection_radio_buttons(:selection_series, SelectionSeries.all, :id, :name, {checked: 1}, {class:"select-box", id:"selection-series"}) %>
+            </td>
+            <td class="hdsr-value">
+              <%= f.collection_radio_buttons(:answer_4_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-4-1"}) %>
+              <%= f.collection_radio_buttons(:answer_4_2, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-4-2"}) %>
+              <%= f.collection_radio_buttons(:answer_4_3, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-4-3"}) %>
+            </td>
+          </tr>
+          <tr>
+            <th class="hdsr-item">5</th>
+            <td class="hdsr-text">
+              <div class="hdsr-question">
+                100から7を順番に引いてください。（100−7は？それからまた７を引くと？ と質問する。最初の答えが不正解の場合打ち切る）
+              </div>
+              <div class="hdsr-proper-answer">
+                （93）<br>
+                （86）
+              </div>
+            </td>
+            <td class="hdsr-value">
+              <%= f.collection_radio_buttons(:answer_5_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-5-1"}) %>
+              <%= f.collection_radio_buttons(:answer_5_2, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-5-2"}) %>
+            </td>
+          <tr>
+            <th class="hdsr-item">6</th>
+            <td class="hdsr-text">
+              <div class="hdsr-question">
+                私がこれから言う数字を逆から言ってください。（6-8-2, 3-5-2-9）を逆に言ってもらう。3桁逆唱に失敗したら打ち切る）
+              </div>
+              <div class="hdsr-proper-answer">
+                （93）<br>
+                （86）
+              </div>
+            </td>
+            <td class="hdsr-value">
+              <%= f.collection_radio_buttons(:answer_6_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-6-1"}) %>
+              <%= f.collection_radio_buttons(:answer_6_2, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-6-2"}) %>
+            </td>
+          </tr>
+          <tr>
+            <th class="hdsr-item">7</th>
+            <td class="hdsr-text">
+              先ほど覚えてもらった言葉をもう一度言ってみてください。<br>
+              （自発的に回答があれば2点、もし回答がない場合は以下のヒントを与え正解であれば1点）<br>
+              a)植物 b)動物 c)乗り物
+            </td>
+            <td class="hdsr-value">
+              <%= f.collection_radio_buttons(:answer_7_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-7-1"}) %>
+              <%= f.collection_radio_buttons(:answer_7_2, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-7-2"}) %>
+              <%= f.collection_radio_buttons(:answer_7_3, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-7-3"}) %>
+            </td>
+          </tr>
+          <tr>
+            <th class="hdsr-item">8</th>
+            <td class="hdsr-text">
+              これから5つの品物を見せます。それを隠しますので何があったかを言ってください。<br>
+              （時計、鍵、タバコ、ペン、硬貨など必ず相互に無関係なもの）
+            </td>
+            <td class="hdsr-value">
+              <%= f.collection_radio_buttons(:answer_8, Answer0to5.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-1"}) %>
+            </td>
+          </tr>
+          <tr>
+            <th class="hdsr-item">9</th>
+            <td class="hdsr-text">
+              <div class="hdsr-question">
+                知っている野菜の名前をできるだけ多く言ってください。（答えた野菜の名前を記入する。途中で詰まり、約10秒待ってもでない場合にはそこで打ち切る）<br>
+                0～5＝0点， 6＝1点， 7＝2点， 8＝3点<br>
+                9＝4点， 10＝5点
+              </div>
+              <div class="hdsr-proper-answer">
+                <%= f.text_area :answer_9_memo, class:"hdsr-text", placeholder:"例）キャベツ、にんじんなど"%>
+              </div>
+            </td>
+            <td class="hdsr-value">
+              <%= f.collection_radio_buttons(:answer_9, Answer0to5.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-1"}) %>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+      <div class="post-hdsr-btn">
+        <%= f.submit "評価終了", class:"hdsr-red-btn"%>
+      </div>
+    <% end %>
+  </div>
+</div>

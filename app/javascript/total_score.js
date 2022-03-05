@@ -36,5 +36,8 @@ window.addEventListener('click', function(){
   }, 0);
 
   total_score.innerHTML = `${total}点`;
+  const renderDom = this.document.getElementById("total_score");
+  const totalScoreObj = `<input value=${total} name='total_score' type='hidden'>`;
+  renderDom.insertAdjacentHTML("beforeend", totalScoreObj);
 
 });

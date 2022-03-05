@@ -106,7 +106,7 @@
               （時計、鍵、タバコ、ペン、硬貨など必ず相互に無関係なもの）
             </td>
             <td class="hdsr-value">
-              <%= f.collection_radio_buttons(:answer_8, Answer0to5.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-1"}) %>
+              <%= f.collection_radio_buttons(:answer_8, Answer0to5.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-8"}) %>
             </td>
           </tr>
           <tr>
@@ -122,12 +122,15 @@
               </div>
             </td>
             <td class="hdsr-value">
-              <%= f.collection_radio_buttons(:answer_9, Answer0to5.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-1"}) %>
+              <%= f.collection_radio_buttons(:answer_9, Answer0to5.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-9"}) %>
             </td>
           </tr>
-
         </tbody>
       </table>
+      <div class="total-score">
+        <span>トータルスコア</span>
+        <span id='total_score'></span>
+      </div>
       <div class="post-hdsr-btn">
         <%= f.submit "評価終了", class:"hdsr-red-btn"%>
       </div>

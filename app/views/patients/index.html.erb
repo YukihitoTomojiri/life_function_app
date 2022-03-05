@@ -13,8 +13,7 @@
     <ul class="patient-name">
       <% @patients.each do |patient| %>
         <div class="patient_post">
-          <%= link_to patient.patient_last_name + " " + patient.patient_first_name, "#" %>
-          <%= link_to patient.care_certified.name %>
+          <%= link_to patient.patient_last_name + " " + patient.patient_first_name + " " + patient.care_certified.name, patient_path(patient.id) %>
           <%= image_tag "account_icon.svg" %>
         </div>
       <% end %>

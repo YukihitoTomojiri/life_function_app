@@ -81,25 +81,26 @@ LifeFunctionAppは、実際にリリースするものではなく、ポート�
 |-------------------|-----------|--------------------------------|
 | testing_date      | date      | null: false                    |
 | testing_place     | string    |                                |
-| question_1        | integer   | null: false                    |
-| question_2_1      | integer   | null: false                    |
-| question_2_2      | integer   | null: false                    |
-| question_2_3      | integer   | null: false                    |
-| question_2_4      | integer   | null: false                    |
-| question_3        | integer   | null: false                    |
-| question_4_1      | integer   | null: false                    |
-| question_4_2      | integer   | null: false                    |
-| question_4_3      | integer   | null: false                    |
-| question_5_1      | integer   | null: false                    |
-| question_5_2      | integer   | null: false                    |
-| question_6_1      | integer   | null: false                    |
-| question_6_2      | integer   | null: false                    |
-| question_7_1      | integer   | null: false                    |
-| question_7_2      | integer   | null: false                    |
-| question_7_3      | integer   | null: false                    |
-| question_8        | integer   | null: false                    |
-| question_9        | integer   | null: false                    |
-| question_9_memo   | integer   |                                |
+| answer_1          | integer   | null: false                    |
+| answer_2_1        | integer   | null: false                    |
+| answer_2_2        | integer   | null: false                    |
+| answer_2_3        | integer   | null: false                    |
+| answer_2_4        | integer   | null: false                    |
+| answer_3          | integer   | null: false                    |
+| selection_series  | integer   | null: false                    |
+| answer_4_1        | integer   | null: false                    |
+| answer_4_2        | integer   | null: false                    |
+| answer_4_3        | integer   | null: false                    |
+| answer_5_1        | integer   | null: false                    |
+| answer_5_2        | integer   | null: false                    |
+| answer_6_1        | integer   | null: false                    |
+| answer_6_2        | integer   | null: false                    |
+| answer_7_1        | integer   | null: false                    |
+| answer_7_2        | integer   | null: false                    |
+| answer_7_3        | integer   | null: false                    |
+| answer_8          | integer   | null: false                    |
+| answer_9          | integer   | null: false                    |
+| answer_9_memo     | integer   |                                |
 | total_score       | integer   | null: false                    |
 | user              | reference | null: false, foreign_key: true |
 | patient           | reference | null: false, foreign_key: true |

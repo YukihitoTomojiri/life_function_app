@@ -4,7 +4,8 @@ class Patient < ApplicationRecord
     belongs_to_active_hash :prefecture
     belongs_to_active_hash :gender
     belongs_to_active_hash :care_certified
-
+    has_one :hdsr_log
+    
     validates :patient_first_name,      presence: true
     validates :patient_last_name,       presence: true
     validates :patient_first_name_kana, presence: true

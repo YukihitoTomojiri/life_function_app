@@ -4,6 +4,7 @@ class HdsrLogsController < ApplicationController
   
     def index
       @hdsr_patient = HdsrLogPatient.new
+      @hdsr_log = HdsrLog.find(params[:id])
     end
   
     def create

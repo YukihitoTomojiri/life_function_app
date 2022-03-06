@@ -24,8 +24,7 @@ class CreateHdsrs < ActiveRecord::Migration[6.0]
       t.integer :answer_9,         null: false
       t.integer :answer_9_memo
       t.integer :total_score
-      t.references :user
-      t.references :patient
+      t.references :hdsr_log,      null: false, foregin_key: true
       t.timestamps
     end
   end

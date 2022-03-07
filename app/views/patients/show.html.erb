@@ -40,15 +40,12 @@
     </h2>
     <div class="contents-row">
       <ul class="hdsr-lists">
-        <%# @patients.each do |patient| %>
+        <%= link_to "評価する", patient_hdsr_logs_path(@patient.id) %>
+        <% @hdsr_logs.each do |hdsr_log| %>
           <div class="patient_post">
-            <%= link_to "評価する", patient_hdsr_logs_path(@patient.id) %>
-            <p>令和◯年◯月◯日</p>
-            <%#= link_to patient.patient_last_name + " " + patient.patient_first_name, "#" %>
-            <%#= link_to patient.care_certified.name %>
-            <%#= image_tag "account_icon.svg" %>
+            <%= link_to hdsr_log.created_at.strftime("%Y年 %m月 %d日"), "#" %>
           </div>
-        <%# end %>
+        <% end %>
       </ul>
       <%= link_to "戻る", "/" %>
     </div>

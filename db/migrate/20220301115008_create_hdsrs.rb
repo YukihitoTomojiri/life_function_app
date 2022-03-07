@@ -1,7 +1,6 @@
 class CreateHdsrs < ActiveRecord::Migration[6.0]
   def change
     create_table :hdsrs do |t|
-      t.date    :testing_date,     null: false
       t.string  :testing_place
       t.integer :answer_1,         null: false
       t.integer :answer_2_1,       null: false

@@ -19,8 +19,7 @@ class PatientsController < ApplicationController
 
   def show
     @patient = Patient.find(params[:id])
-    # binding.pry
-    # @hdsr = HdsrLog.find(params[:patient_id])
+    @hdsr_logs = HdsrLog.where(patient_id: @patient.id)
   end
   
   

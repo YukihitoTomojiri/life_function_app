@@ -7,14 +7,6 @@
   <div class="hdsr-log-table-contents">
     <%= form_with model: @hdsr_patient, id:'hdsr-form', url: patient_hdsr_logs_path, local: true do |f| %>
       <%= render partial: 'shared/error_messages', locals:{ model: @hdsr_patient} %>
-      <%= raw sprintf(
-        f.date_select(
-          :testing_date,
-          use_month_numbers: true,
-          selected: Time.now,
-          date_separator: '%s'),
-          "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" 
-      %>
       <table class="hdsr-table">
         <tbody>
           <tr>

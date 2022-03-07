@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2022_03_01_121440) do
   end
 
   create_table "hdsrs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.date "testing_date", null: false
     t.string "testing_place"
     t.integer "answer_1", null: false
     t.integer "answer_2_1", null: false

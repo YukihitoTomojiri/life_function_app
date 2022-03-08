@@ -12,37 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_03_01_121440) do
 
-  create_table "hasegawa_dimentia_scales", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.date "testing_date", null: false
-    t.string "testing_place"
-    t.integer "answer_1", null: false
-    t.integer "answer_2_1", null: false
-    t.integer "answer_2_2", null: false
-    t.integer "answer_2_3", null: false
-    t.integer "answer_2_4", null: false
-    t.integer "answer_3", null: false
-    t.integer "answer_4_1", null: false
-    t.integer "answer_4_2", null: false
-    t.integer "answer_4_3", null: false
-    t.integer "answer_5_1", null: false
-    t.integer "answer_5_2", null: false
-    t.integer "answer_6_1", null: false
-    t.integer "answer_6_2", null: false
-    t.integer "answer_7_1", null: false
-    t.integer "answer_7_2", null: false
-    t.integer "answer_7_3", null: false
-    t.integer "answer_8", null: false
-    t.integer "answer_9", null: false
-    t.string "answer_9_memo"
-    t.integer "total_score", null: false
-    t.bigint "user_id", null: false
-    t.bigint "patient_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["patient_id"], name: "index_hasegawa_dimentia_scales_on_patient_id"
-    t.index ["user_id"], name: "index_hasegawa_dimentia_scales_on_user_id"
-  end
-
   create_table "hdsr_logs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "patient_id", null: false
@@ -53,7 +22,6 @@ ActiveRecord::Schema.define(version: 2022_03_01_121440) do
   end
 
   create_table "hdsrs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.date "testing_date", null: false
     t.string "testing_place"
     t.integer "answer_1", null: false
     t.integer "answer_2_1", null: false
@@ -76,12 +44,10 @@ ActiveRecord::Schema.define(version: 2022_03_01_121440) do
     t.integer "answer_9", null: false
     t.integer "answer_9_memo"
     t.integer "total_score"
-    t.bigint "user_id"
-    t.bigint "patient_id"
+    t.bigint "hdsr_log_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["patient_id"], name: "index_hdsrs_on_patient_id"
-    t.index ["user_id"], name: "index_hdsrs_on_user_id"
+    t.index ["hdsr_log_id"], name: "index_hdsrs_on_hdsr_log_id"
   end
 
   create_table "patients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -118,8 +84,6 @@ ActiveRecord::Schema.define(version: 2022_03_01_121440) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "hasegawa_dimentia_scales", "patients"
-  add_foreign_key "hasegawa_dimentia_scales", "users"
   add_foreign_key "hdsr_logs", "patients"
   add_foreign_key "hdsr_logs", "users"
   add_foreign_key "patients", "users"

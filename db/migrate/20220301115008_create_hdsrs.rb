@@ -1,7 +1,6 @@
 class CreateHdsrs < ActiveRecord::Migration[6.0]
   def change
     create_table :hdsrs do |t|
-      t.date    :testing_date,     null: false
       t.string  :testing_place
       t.integer :answer_1,         null: false
       t.integer :answer_2_1,       null: false
@@ -24,8 +23,7 @@ class CreateHdsrs < ActiveRecord::Migration[6.0]
       t.integer :answer_9,         null: false
       t.integer :answer_9_memo
       t.integer :total_score
-      t.references :user
-      t.references :patient
+      t.references :hdsr_log,      null: false, foregin_key: true
       t.timestamps
     end
   end

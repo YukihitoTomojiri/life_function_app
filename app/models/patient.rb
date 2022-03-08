@@ -10,8 +10,8 @@ class Patient < ApplicationRecord
     validates :patient_last_name,       presence: true
     validates :patient_first_name_kana, presence: true
     validates :patient_last_name_kana,  presence: true
-    validates :gender_id,               presence: true
+    validates :gender_id,               numericality: true
     validates :birthday,                presence: true
-    validates :care_certified_id,       numericality: { other_than: 1, message: "can't be Blank" }
+    validates :care_certified_id,       numericality: true
     validates :prefecture_id,           numericality: { other_than: 1, message: "can't be Blank" }
 end

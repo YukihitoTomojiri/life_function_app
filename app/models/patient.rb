@@ -1,17 +1,17 @@
 class Patient < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-    belongs_to :user
-    belongs_to_active_hash :prefecture
-    belongs_to_active_hash :gender
-    belongs_to_active_hash :care_certified
-    has_one :hdsr_log
-    
-    validates :patient_first_name,      presence: true
-    validates :patient_last_name,       presence: true
-    validates :patient_first_name_kana, presence: true
-    validates :patient_last_name_kana,  presence: true
-    validates :gender_id,               numericality: true
-    validates :birthday,                presence: true
-    validates :care_certified_id,       numericality: true
-    validates :prefecture_id,           numericality: { other_than: 1, message: "can't be Blank" }
+  belongs_to :user
+  belongs_to_active_hash :prefecture
+  belongs_to_active_hash :gender
+  belongs_to_active_hash :care_certified
+  has_one :hdsr_log
+
+  validates :patient_first_name,      presence: true
+  validates :patient_last_name,       presence: true
+  validates :patient_first_name_kana, presence: true
+  validates :patient_last_name_kana,  presence: true
+  validates :gender_id,               numericality: true
+  validates :birthday,                presence: true
+  validates :care_certified_id,       numericality: true
+  validates :prefecture_id,           numericality: { other_than: 1, message: "can't be Blank" }
 end

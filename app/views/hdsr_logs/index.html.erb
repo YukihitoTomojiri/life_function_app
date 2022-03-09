@@ -15,7 +15,7 @@
               お年はいくつですか？（2年までの誤差は正解）
             </td>
             <td class="hdsr-value">
-              <%= f.collection_radio_buttons(:answer_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-1"}) %>
+              <div class="hdsr-radio-btn"><%= f.collection_radio_buttons(:answer_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-1"}) %></div>
             </td>
           </tr>
 
@@ -26,10 +26,10 @@
               （年月日、曜日が正解でそれぞれ1点ずつ）
             </td>
             <td class="hdsr-value">
-              <%= f.collection_radio_buttons(:answer_2_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-2-1"}) %>
-              <%= f.collection_radio_buttons(:answer_2_2, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-2-2"}) %>
-              <%= f.collection_radio_buttons(:answer_2_3, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-2-3"}) %>
-              <%= f.collection_radio_buttons(:answer_2_4, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-2-4"}) %>
+              <div class="hdsr-radio-btn">年    <%= f.collection_radio_buttons(:answer_2_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-2-1"}) %></div>
+              <div class="hdsr-radio-btn">月    <%= f.collection_radio_buttons(:answer_2_2, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-2-2"}) %></div>
+              <div class="hdsr-radio-btn">日    <%= f.collection_radio_buttons(:answer_2_3, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-2-3"}) %></div>
+              <div class="hdsr-radio-btn">曜日  <%= f.collection_radio_buttons(:answer_2_4, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-2-4"}) %></div>
             </td>
           </tr>
           <tr>
@@ -39,7 +39,7 @@
               （自発的に出れば2点、5秒おいて家ですか？ 病院ですか？ 施設ですか？の中から正しい選択をすれば1点）
             </td>
             <td class="hdsr-value">
-              <%= f.collection_radio_buttons(:answer_3, Answer0to2.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-3"}) %>
+              <div class="hdsr-radio-btn"><%= f.collection_radio_buttons(:answer_3, Answer0to2.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-3"}) %></div>
             </td>
           </tr>
           <tr>
@@ -50,9 +50,9 @@
               <%= f.collection_radio_buttons(:selection_series, SelectionSeries.all, :id, :name, {checked: 1}, {class:"select-box", id:"selection-series"}) %>
             </td>
             <td class="hdsr-value">
-              <%= f.collection_radio_buttons(:answer_4_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-4-1"}) %>
-              <%= f.collection_radio_buttons(:answer_4_2, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-4-2"}) %>
-              <%= f.collection_radio_buttons(:answer_4_3, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-4-3"}) %>
+              <div class="hdsr-radio-btn">a:<%= f.collection_radio_buttons(:answer_4_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-4-1"}) %></div>
+              <div class="hdsr-radio-btn">b:<%= f.collection_radio_buttons(:answer_4_2, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-4-2"}) %></div>
+              <div class="hdsr-radio-btn">c:<%= f.collection_radio_buttons(:answer_4_3, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-4-3"}) %></div>
             </td>
           </tr>
           <tr>
@@ -61,14 +61,10 @@
               <div class="hdsr-question">
                 100から7を順番に引いてください。（100−7は？それからまた７を引くと？ と質問する。最初の答えが不正解の場合打ち切る）
               </div>
-              <div class="hdsr-proper-answer">
-                （93）<br>
-                （86）
-              </div>
             </td>
             <td class="hdsr-value">
-              <%= f.collection_radio_buttons(:answer_5_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-5-1"}) %>
-              <%= f.collection_radio_buttons(:answer_5_2, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-5-2"}) %>
+              <div class="hdsr-radio-btn">(93)<%= f.collection_radio_buttons(:answer_5_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-5-1"}) %></div>
+              <div class="hdsr-radio-btn">(86)<%= f.collection_radio_buttons(:answer_5_2, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-5-2"}) %></div>
             </td>
           <tr>
             <th class="hdsr-item">6</th>
@@ -76,14 +72,10 @@
               <div class="hdsr-question">
                 私がこれから言う数字を逆から言ってください。（6-8-2, 3-5-2-9）を逆に言ってもらう。3桁逆唱に失敗したら打ち切る）
               </div>
-              <div class="hdsr-proper-answer">
-                （93）<br>
-                （86）
-              </div>
             </td>
             <td class="hdsr-value">
-              <%= f.collection_radio_buttons(:answer_6_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-6-1"}) %>
-              <%= f.collection_radio_buttons(:answer_6_2, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-6-2"}) %>
+              <div class="hdsr-radio-btn">(2-8-6)<%= f.collection_radio_buttons(:answer_6_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-6-1"}) %></div>
+              <div class="hdsr-radio-btn">(9-2-5-3)<%= f.collection_radio_buttons(:answer_6_2, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-6-2"}) %></div>
             </td>
           </tr>
           <tr>
@@ -94,9 +86,9 @@
               a)植物 b)動物 c)乗り物
             </td>
             <td class="hdsr-value">
-              <%= f.collection_radio_buttons(:answer_7_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-7-1"}) %>
-              <%= f.collection_radio_buttons(:answer_7_2, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-7-2"}) %>
-              <%= f.collection_radio_buttons(:answer_7_3, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-7-3"}) %>
+              <div class="hdsr-radio-btn">a:<%= f.collection_radio_buttons(:answer_7_1, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-7-1"}) %></div>
+              <div class="hdsr-radio-btn">b:<%= f.collection_radio_buttons(:answer_7_2, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-7-2"}) %></div>
+              <div class="hdsr-radio-btn">c:<%= f.collection_radio_buttons(:answer_7_3, Answer0to1.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-7-3"}) %></div>
             </td>
           </tr>
           <tr>
@@ -122,7 +114,7 @@
               </div>
             </td>
             <td class="hdsr-value">
-              <%= f.collection_radio_buttons(:answer_9, Answer0to5.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-9"}) %>
+              <div class="hdsr-radio-btn"><%= f.collection_radio_buttons(:answer_9, Answer0to5.all, :id, :name, {checked: 1}, {class:"select-box", id:"answer-9"}) %></div>
             </td>
           </tr>
         </tbody>

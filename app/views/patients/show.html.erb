@@ -43,7 +43,7 @@
         <%= link_to "評価する", patient_hdsr_logs_path(@patient.id) %>
         <% @hdsr_logs.each do |hdsr_log| %>
           <div class="patient_post">
-            <%= link_to hdsr_log.created_at.strftime("%Y年 %m月 %d日"), "#" %>
+            <%= link_to hdsr_log.created_at.strftime("%Y年 %m月 %d日"), patient_hdsr_log_path(@patient.id, hdsr_log.id) %>
           </div>
         <% end %>
       </ul>

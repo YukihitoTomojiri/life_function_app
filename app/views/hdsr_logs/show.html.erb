@@ -1,2 +1,127 @@
 <%= render "shared/header" %>
-<%= @hdsr_log.id %>
+
+<div class="hdsr-log-index">
+  <div class="hdsr-log-title-contents">
+    <h2 class="hdsr-log-sell-title">項目を選択し入力してください</h2>
+  </div>
+  <div class="hdsr-log-table-contents">
+    <table class="hdsr-table">
+      <tbody>
+        <tr>
+          <th class="hdsr-item">1</th>
+          <td class="hdsr-text">
+            お年はいくつですか？（2年までの誤差は正解）
+          </td>
+          <td class="hdsr-value">
+            <div class="hdsr-radio-btn"><%= @hdsr.answer_1 - 1 %></div>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="hdsr-item">2</th>
+          <td class="hdsr-text">
+            今日は何年の何月何日ですか？何曜日ですか？<br>
+            （年月日、曜日が正解でそれぞれ1点ずつ）
+          </td>
+          <td class="hdsr-value">
+            <div class="hdsr-answer">年　　<%= @hdsr.answer_2_1 - 1 %></div>
+            <div class="hdsr-answer">月　　<%= @hdsr.answer_2_2 - 1 %></div>
+            <div class="hdsr-answer">日　　<%= @hdsr.answer_2_3 - 1 %></div>
+            <div class="hdsr-answer">曜日　<%= @hdsr.answer_2_4 - 1 %></div>
+          </td>
+        </tr>
+        <tr>
+          <th class="hdsr-item">3</th>
+          <td class="hdsr-text">
+            私たちが今いるところはどこですか？<br>
+            （自発的に出れば2点、5秒おいて家ですか？ 病院ですか？ 施設ですか？の中から正しい選択をすれば1点）
+          </td>
+          <td class="hdsr-value">
+            <div class="hdsr-answer"><%= @hdsr.answer_3 - 1 %></div>
+          </td>
+        </tr>
+        <tr>
+          <th class="hdsr-item">4</th>
+          <td class="hdsr-text">
+            これから言う3つの言葉を言ってみてください。後で聞きますのでよく覚えておいてください。<br>
+            （以下の系列でいずれか1つで、採用した系列を選択する）<br>
+          </td>
+          <td class="hdsr-value">
+            <div class="hdsr-answer">a:　<%= @hdsr.answer_4_1 - 1%></div>
+            <div class="hdsr-answer">b:　<%= @hdsr.answer_4_2 - 1%></div>
+            <div class="hdsr-answer">c:　<%= @hdsr.answer_4_3 - 1%></div>
+          </td>
+        </tr>
+        <tr>
+          <th class="hdsr-item">5</th>
+          <td class="hdsr-text">
+            <div class="hdsr-question">
+              100から7を順番に引いてください。（100−7は？それからまた７を引くと？ と質問する。最初の答えが不正解の場合打ち切る）
+            </div>
+          </td>
+          <td class="hdsr-value">
+            <div class="hdsr-answer">(93)　<%= @hdsr.answer_5_1 - 1 %></div>
+            <div class="hdsr-answer">(86)　<%= @hdsr.answer_5_2 - 1 %></div>
+          </td>
+        <tr>
+          <th class="hdsr-item">6</th>
+          <td class="hdsr-text">
+            <div class="hdsr-question">
+              私がこれから言う数字を逆から言ってください。（6-8-2, 3-5-2-9）を逆に言ってもらう。3桁逆唱に失敗したら打ち切る）
+            </div>
+          </td>
+          <td class="hdsr-value">
+            <div class="hdsr-answer">(2-8-6)　　<%= @hdsr.answer_6_1 - 1%></div>
+            <div class="hdsr-answer">(9-2-5-3)　<%= @hdsr.answer_6_2 - 1%></div>
+          </td>
+        </tr>
+        <tr>
+          <th class="hdsr-item">7</th>
+          <td class="hdsr-text">
+            先ほど覚えてもらった言葉をもう一度言ってみてください。<br>
+            （自発的に回答があれば2点、もし回答がない場合は以下のヒントを与え正解であれば1点）<br>
+            a)植物 b)動物 c)乗り物
+          </td>
+          <td class="hdsr-value">
+            <div class="hdsr-answer">a:　<%= @hdsr.answer_7_1 - 1%></div>
+            <div class="hdsr-answer">b:　<%= @hdsr.answer_7_2 - 1%></div>
+            <div class="hdsr-answer">c:　<%= @hdsr.answer_7_3 - 1%></div>
+          </td>
+        </tr>
+        <tr>
+          <th class="hdsr-item">8</th>
+          <td class="hdsr-text">
+            これから5つの品物を見せます。それを隠しますので何があったかを言ってください。<br>
+            （時計、鍵、タバコ、ペン、硬貨など必ず相互に無関係なもの）
+          </td>
+          <td class="hdsr-value">
+            <%= @hdsr.answer_8 - 1 %>
+          </td>
+        </tr>
+        <tr>
+          <th class="hdsr-item">9</th>
+          <td class="hdsr-text">
+            <div class="hdsr-question">
+              知っている野菜の名前をできるだけ多く言ってください。（答えた野菜の名前を記入する。途中で詰まり、約10秒待ってもでない場合にはそこで打ち切る）<br>
+              0～5＝0点， 6＝1点， 7＝2点， 8＝3点<br>
+              9＝4点， 10＝5点
+            </div>
+            <div class="hdsr-proper-answer">
+              <%= @hdsr.answer_9_memo%>
+            </div>
+          </td>
+          <td class="hdsr-value">
+            <div class="hdsr-answer"><%= @hdsr.answer_9 - 1 %></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="total-score">
+      <span>トータルスコア</span>
+      <div><%= @hdsr.total_score %></div>
+    </div>
+    <div class="return_patient">
+      <%= link_to "戻る",patient_path(@hdsr_log.patient_id)%>
+    </div>
+  </div>
+</div>

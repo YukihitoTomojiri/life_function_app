@@ -18,6 +18,7 @@ class HdsrLogsController < ApplicationController
 
   def show
     @hdsr_log = HdsrLog.find(params[:id])
+    @hdsr = Hdsr.find(@hdsr_log.id)
   end
 
   private

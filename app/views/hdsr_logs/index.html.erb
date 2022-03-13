@@ -1,9 +1,9 @@
 <%= render "shared/header" %>
 
-<div class="hdsr-log-index">
-  <div class="hdsr-log-title-contents">
-    <h2 class="hdsr-log-sell-title">項目を選択し入力してください</h2>
-  </div>
+<div class="d-flex flex-column align-items m-3 bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ms-4">
+    <h2 class="">点数を選択してください。</h2>
+  </nav>
 
   <div class="container">
     <%= form_with model: @hdsr_patient, id:'hdsr-form', url: patient_hdsr_logs_path, local: true do |f| %>
@@ -13,7 +13,7 @@
           1
         </div>
         <div class="col-6">
-          お年はいくつですか？（2年までの誤差は正解）
+          <h4>お年はいくつですか？（2年までの誤差は正解）</h4>
         </div>
         <div class="col-2">
         </div>
@@ -35,8 +35,10 @@
           2
         </div>
         <div class="col-6">
-          今日は何年の何月何日ですか？何曜日ですか？<br>
-          （年月日、曜日が正解でそれぞれ1点ずつ）
+          <h4>
+            今日は何年の何月何日ですか？何曜日ですか？<br>
+            （年月日、曜日が正解でそれぞれ1点ずつ）
+          </h4>
         </div>
         <div class="col-2">
           <div class="mt-2 mb-2 text-end">年</div>
@@ -86,8 +88,10 @@
           3
         </div>
         <div class="col-6">
-          私たちが今いるところはどこですか？<br>
-          （自発的に出れば2点、5秒おいて家ですか？ 病院ですか？ 施設ですか？の中から正しい選択をすれば1点）
+          <h4>
+            私たちが今いるところはどこですか？<br>
+            （自発的に出れば2点、5秒おいて家ですか？ 病院ですか？ 施設ですか？の中から正しい選択をすれば1点）
+          </h4>
         </div>
         <div class="col-2">
         </div>
@@ -111,8 +115,10 @@
           4
         </div>
         <div class="col-6">
-          これから言う3つの言葉を言ってみてください。後で聞きますのでよく覚えておいてください。（以下の系列でいずれか1つで、採用した系列を選択する）<br>
-          <%= f.collection_radio_buttons(:selection_series, SelectionSeries.all, :id, :name, {checked: 1}, {class:"select-box", id:"selection-series"}) %>
+          <h4>
+            これから言う3つの言葉を言ってみてください。後で聞きますのでよく覚えておいてください。（以下の系列でいずれか1つで、採用した系列を選択する）<br>
+            <%= f.collection_radio_buttons(:selection_series, SelectionSeries.all, :id, :name, {checked: 1}, {class:"select-box", id:"selection-series"}) %>
+          </h4>
         </div>
         <div class="col-2">
           <div class="mt-2 mb-2 text-end">a:</div>
@@ -155,7 +161,9 @@
           5
         </div>
         <div class="col-6">
-          100から7を順番に引いてください。（100−7は？それからまた７を引くと？ と質問する。最初の答えが不正解の場合打ち切る）
+          <h4>
+            100から7を順番に引いてください。（100−7は？それからまた７を引くと？ と質問する。最初の答えが不正解の場合打ち切る）
+          </h4>
         </div>
         <div class="col-2">
           <div class="mt-2 mb-2 text-end">(93)</div>
@@ -188,7 +196,9 @@
           6
         </div>
         <div class="col-6">
-          私がこれから言う数字を逆から言ってください。（6-8-2, 3-5-2-9）を逆に言ってもらう。3桁逆唱に失敗したら打ち切る）
+          <h4>
+            私がこれから言う数字を逆から言ってください。（6-8-2, 3-5-2-9）を逆に言ってもらう。3桁逆唱に失敗したら打ち切る）
+          </h4>
         </div>
         <div class="col-2">
           <div class="mt-2 mb-2 text-end">(2-8-6)</div>
@@ -221,9 +231,11 @@
           7
         </div>
         <div class="col-6">
-          先ほど覚えてもらった言葉をもう一度言ってみてください。<br>
-          （自発的に回答があれば2点、もし回答がない場合は以下のヒントを与え正解であれば1点）<br>
-          a)植物 b)動物 c)乗り物
+          <h4>
+            先ほど覚えてもらった言葉をもう一度言ってみてください。<br>
+            （自発的に回答があれば2点、もし回答がない場合は以下のヒントを与え正解であれば1点）<br>
+            a)植物 b)動物 c)乗り物
+          </h4>
         </div>
         <div class="col-2">
           <div class="mt-2 mb-2 text-end">a:</div>
@@ -272,8 +284,10 @@
           8
         </div>
         <div class="col-6">
-          これから5つの品物を見せます。それを隠しますので何があったかを言ってください。<br>
-          （時計、鍵、タバコ、ペン、硬貨など必ず相互に無関係なもの）
+          <h4>
+            これから5つの品物を見せます。それを隠しますので何があったかを言ってください。<br>
+            （時計、鍵、タバコ、ペン、硬貨など必ず相互に無関係なもの）
+          </h4>
         </div>
         <div class="col-2">
         </div>
@@ -307,8 +321,10 @@
           9
         </div>
         <div class="col-6">
-          知っている野菜の名前をできるだけ多く言ってください。（答えた野菜の名前を記入する。途中で詰まり、約10秒待ってもでない場合にはそこで打ち切る）<br>
-          0～5＝0点， 6＝1点， 7＝2点， 8＝3点，9＝4点， 10＝5点
+          <h4>
+            知っている野菜の名前をできるだけ多く言ってください。（答えた野菜の名前を記入する。途中で詰まり、約10秒待ってもでない場合にはそこで打ち切る）<br>
+            0～5＝0点， 6＝1点， 7＝2点， 8＝3点，9＝4点， 10＝5点
+          </h4>
           <div>
             <%= f.text_area :answer_9_memo, class:"hdsr-text", placeholder:"例）キャベツ、にんじんなど"%>
           </div>
@@ -340,10 +356,11 @@
         </div>
       </div>
       <div class="shadow-lg p-3 mb-5 bg-body rounded mt-2">
-        <p class="text-end fs-4">トータルスコア<span class="fs-2 ms-2" id='total_score'></span></p>
+        <p class="text-end fs-4" id="message-box">トータルスコア<span class="fs-2 ms-2" id='total_score'></span></p>
+        <p><span class="text-end fs-4" id='message'></span></p>
       </div>
-      <div class="post-hdsr-btn">
-        <%= f.submit "評価終了", class:"hdsr-red-btn", id:"submit" %>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <%= f.submit "評価終了", class:"btn btn-primary fs-4", id:"submit" %>
       </div>
     <% end %>
   </div>

@@ -1,11 +1,11 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
-<header class='top-page-header'>
-  <div class='search-bar-contents'>
-    <%= link_to "LifeFunction", "/", class:"LifeFunction-icon" %>
+<header class='max-width p-3 d-flex flex-column'>
+  <div class='d-flex justify-content-between align-items-center'>
+    <%= link_to image_tag("LifeFunction-logo.png",size: '200x60'), "/", class:"p-2" %>
     <form class="search-form" action="#">
       <input class='input-box' placeholder='キーワードから探す'>
-      <button class="search-button">
-        <%= image_tag "search.png", class:"search-icon" %>
+      <button class="w-2 border-0 rounded bg-info ">
+        <%= image_tag "search.png",size: '50x50', class:"search-icon" %>
       </button>
     </form>
     <ul class='lists-right'>

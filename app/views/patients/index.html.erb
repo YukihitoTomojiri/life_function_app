@@ -2,22 +2,53 @@
 
 <div class='text-center bg-light'>
 
-  <div class="title-contents">
-    <h2>利用者一覧</h2>
-    <div class="btn btn-danger navbar-btn">
-      <%= link_to "患者登録", new_patient_path, class: "patient-new" %>
+  <%# <div class="title-contents"> %>
+    <div class="bg-info d-flex flex-col justify-content-between p-3">
+      <h2 class="text-light ms-5">利用者一覧</h2>
+      <div class="btn btn-success rounded navbar-btn me-5">
+        <%= link_to "患者登録", new_patient_path, class: "text-light text-decoration-none" %>
+      </div>
     </div>
-  </div>
+  <%# </div> %>
 
-  <div class="contents-row">
-    <ul class="patient-name">
-      <% @patients.each do |patient| %>
-        <div class="patient_post">
-          <%= link_to patient.patient_last_name + " " + patient.patient_first_name + " " + patient.care_certified.name, patient_path(patient.id) %>
-          <%= image_tag "account_icon.svg" %>
+  <div class="container">
+    <div class="row  p-3">
+      <div class="d-flex position-relative">
+        <div class="col-3">
+          <%= image_tag("account_icon.svg", size: '100x60') %>
         </div>
-      <% end %>
-    </ul>
+        <div class="col-5">
+          <h5 class="mt-3 ms-3">
+            患者名
+          </h5>
+        </div>
+        <div class="col">
+          <h5 class="mt-3 ms-3">
+            介護認定
+          </h5>
+        </div>
+      </div>
+    </div>
+    <% @patients.each do |patient| %>
+      <div class="rounded-pill border border-5 row p-3 table table-striped table-hover">
+        <div class="d-flex position-relative">
+          <div class="col-3">
+            <%= image_tag("account_icon.svg", size: '100x60') %>
+          </div>
+          <div class="col-5">
+            <h5 class="mt-0 ms-3 text-decoration-none">
+              <%= link_to patient.patient_last_name + " " + patient.patient_first_name, patient_path(patient.id), class:"text-decoration-none stretched-link" %>
+            </h5>
+          </div>
+          <div class="col">
+            <h5>
+              <%= patient.care_certified.name %>
+            </h5>
+          </div>
+        </div>
+      </div>
+    
+    <% end %>
   </div>
 </div>
 

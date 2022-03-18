@@ -22,6 +22,11 @@ class PatientsController < ApplicationController
     @hdsr_logs = HdsrLog.where(patient_id: @patient.id)
   end
 
+  def destroy
+    patient = Patient.find(params[:id])
+    patient.destroy
+  end
+
   private
 
   def move_to_index

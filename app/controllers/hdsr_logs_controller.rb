@@ -21,6 +21,13 @@ class HdsrLogsController < ApplicationController
     @hdsr = Hdsr.find_by(hdsr_log_id: @hdsr_log.id)
   end
 
+  def destroy
+    hdsr_log = HdsrLog.find(params[:id])
+    hdsr = Hdsr.find_by(hdsr_log_id: @hdsr_log.id)
+    hdsr_log.destroy
+    hdsr.destroy
+  end
+
   private
 
   def hdsr_params

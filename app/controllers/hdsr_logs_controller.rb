@@ -23,7 +23,7 @@ class HdsrLogsController < ApplicationController
 
   def destroy
     hdsr_log = HdsrLog.find(params[:id])
-    hdsr = Hdsr.find_by(hdsr_log_id: @hdsr_log.id)
+    hdsr = Hdsr.find_by(hdsr_log_id: hdsr_log.id)
     hdsr_log.destroy
     hdsr.destroy
   end

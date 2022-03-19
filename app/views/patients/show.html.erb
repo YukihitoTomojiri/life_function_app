@@ -46,6 +46,7 @@
           </div>
         <% end %>
       </ul>
+      <%= link_to "削除", patient_path(@patient.id), method: :delete %>
       <%= link_to "戻る", "/" %>
     </div>
 

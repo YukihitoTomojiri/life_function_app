@@ -121,6 +121,7 @@
       <div><%= @hdsr.total_score %></div>
     </div>
     <div class="return_patient">
+      <%= link_to "削除", patient_hdsr_log_path(@hdsr_log.id), method: :delete %>
       <%= link_to "戻る",patient_path(@hdsr_log.patient_id)%>
     </div>
   </div>

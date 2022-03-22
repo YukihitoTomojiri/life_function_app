@@ -20,6 +20,7 @@ class PatientsController < ApplicationController
   def show
     @patient = Patient.find(params[:id])
     @hdsr_logs = HdsrLog.where(patient_id: @patient.id)
+    @hdsrs = Hdsr.where(hdsr_log_id: @hdsr_logs)
   end
 
   def destroy

@@ -1,9 +1,9 @@
 <%= render "shared/header" %>
 
-<div class="patient-show">
-  <div class="patient-box">
-    <h2 class="name">
-      <%= @patient.patient_last_name + @patient.patient_first_name %>
+<div class="container d-flex flex-row justify-content-around">
+  <div class="flex-grow-1 me-3">
+    <h2>
+      <%= @patient.patient_last_name + @patient.patient_first_name + "様" %>
     </h2>
     <table class="detail-table">
       <tbody>
@@ -27,28 +27,31 @@
           <th class="detail-item">住所</th>
           <td class="detail-value"><%= @patient.prefecture.name %></td>
         </tr>
-
       </tbody>
     </table>
   </div>
-  <%# /商品の概要 %>
 
-  <div class="content-box">
-    <h2 class="name">
-      < 認知機能評価 >
-    </h2>
-    <div class="contents-row">
-      <ul class="hdsr-lists">
-        <%= link_to "評価する", patient_hdsr_logs_path(@patient.id) %>
-        <% @hdsr_logs.each do |hdsr_log| %>
-          <div class="patient_post">
-            <%= link_to hdsr_log.created_at.strftime("%Y年 %m月 %d日"), patient_hdsr_log_path(@patient.id, hdsr_log.id) %>
-          </div>
-        <% end %>
-      </ul>
-      <%= link_to "削除", patient_path(@patient.id), method: :delete %>
-      <%= link_to "戻る", "/" %>
+  <div class="flex-grow-1 border-start m-1">
+    <div class="d-flex justify-content-around">
+      <h3>
+        認知機能評価日一覧
+      </h3>
+      <%= link_to "評価する", patient_hdsr_logs_path(@patient.id), class:"btn btn-info ps-4 pe-4 mb-1" %>
     </div>
+    <div class="overflow-auto" style="height: 300px;">
+      <% @hdsr_logs.each do |hdsr_log| %>
+        <div class="rounded-pill border border-3 p-1 table table-striped table-hover mb-1 d-flex position-relative ">
+          <h6 class="mx-auto">
+            <%= link_to hdsr_log.created_at.strftime("%Y年 %m月 %d日") , patient_hdsr_log_path(@patient.id, hdsr_log.id), class:"text-decoration-none stretched-link" %>
+          </h6>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-
+</div>
+<div class="d-flex justify-content-center">
+  <%= link_to "削除", patient_path(@patient.id), method: :delete, class:"btn btn-danger ps-4 pe-4 mt-3 mb-3" %>
+  <%= link_to "戻る", "/", class:"btn btn-info ps-4 pe-4 mt-3 mb-3 ms-3"%>
+</div>
 <%= render "shared/second-footer"%>

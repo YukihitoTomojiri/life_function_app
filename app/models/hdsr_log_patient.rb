@@ -8,25 +8,25 @@ class HdsrLogPatient
   with_options presence: true do
     validates :user_id
     validates :patient_id
-    validates :answer_1,   numericality: true
-    validates :answer_2_1, numericality: true
-    validates :answer_2_2, numericality: true
-    validates :answer_2_3, numericality: true
-    validates :answer_2_4, numericality: true
-    validates :answer_3,   numericality: true
-    validates :answer_4_1, numericality: true
-    validates :answer_4_2, numericality: true
-    validates :answer_4_3, numericality: true
-    validates :answer_5_1, numericality: true
-    validates :answer_5_2, numericality: true
-    validates :answer_6_1, numericality: true
-    validates :answer_6_2, numericality: true
-    validates :answer_7_1, numericality: true
-    validates :answer_7_2, numericality: true
-    validates :answer_7_3, numericality: true
-    validates :answer_8,   numericality: true
-    validates :answer_9,   numericality: true
-    validates :total_score, numericality: true
+    validates :answer_1,         numericality: true
+    validates :answer_2_1,       numericality: true
+    validates :answer_2_2,       numericality: true
+    validates :answer_2_3,       numericality: true
+    validates :answer_2_4,       numericality: true
+    validates :answer_3,         numericality: true
+    validates :answer_4_1,       numericality: true
+    validates :answer_4_2,       numericality: true
+    validates :answer_4_3,       numericality: true
+    validates :answer_5_1,       numericality: true
+    validates :answer_5_2,       numericality: true
+    validates :answer_6_1,       numericality: true
+    validates :answer_6_2,       numericality: true
+    validates :answer_7_1,       numericality: true
+    validates :answer_7_2,       numericality: true
+    validates :answer_7_3,       numericality: true
+    validates :answer_8,         numericality: true
+    validates :answer_9,         numericality: true
+    validates :total_score,      numericality: true
     validates :selection_series, numericality: true
   end
 

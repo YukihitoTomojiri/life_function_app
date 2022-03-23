@@ -19,7 +19,7 @@ RSpec.describe HdsrLogPatient, type: :model do
       end
     end
 
-    context '保存ができない場合'do
+    context '保存ができない場合' do
       it 'user_idが紐ついていない場合保存できないこと' do
         @hdsr_log_patient.user_id = nil
         @hdsr_log_patient.valid?
@@ -131,108 +131,106 @@ RSpec.describe HdsrLogPatient, type: :model do
         expect(@hdsr_log_patient.errors.full_messages).to include("Total score can't be blank")
       end
 
-
       it 'answer_1が数字以外の場合' do
         @hdsr_log_patient.answer_1 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 1 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 1 is not a number')
       end
       it 'answer_2_1が数字以外の場合' do
         @hdsr_log_patient.answer_2_1 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 2 1 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 2 1 is not a number')
       end
       it 'answer_2_2が数字以外の場合' do
         @hdsr_log_patient.answer_2_2 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 2 2 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 2 2 is not a number')
       end
       it 'answer_2_3が数字以外の場合' do
         @hdsr_log_patient.answer_2_3 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 2 3 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 2 3 is not a number')
       end
       it 'answer_2_4が数字以外の場合' do
         @hdsr_log_patient.answer_2_4 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 2 4 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 2 4 is not a number')
       end
       it 'answer_3が数字以外の場合' do
         @hdsr_log_patient.answer_3 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 3 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 3 is not a number')
       end
       it 'answer_4_1が数字以外の場合' do
         @hdsr_log_patient.answer_4_1 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 4 1 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 4 1 is not a number')
       end
       it 'answer_4_2が数字以外の場合' do
         @hdsr_log_patient.answer_4_2 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 4 2 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 4 2 is not a number')
       end
       it 'answer_4_3が数字以外の場合' do
         @hdsr_log_patient.answer_4_3 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 4 3 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 4 3 is not a number')
       end
       it 'answer_5_1が数字以外の場合' do
         @hdsr_log_patient.answer_5_1 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 5 1 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 5 1 is not a number')
       end
       it 'answer_5_2が数字以外の場合' do
         @hdsr_log_patient.answer_5_2 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 5 2 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 5 2 is not a number')
       end
       it 'answer_6_1が数字以外の場合' do
         @hdsr_log_patient.answer_6_1 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 6 1 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 6 1 is not a number')
       end
       it 'answer_6_2が数字以外の場合' do
         @hdsr_log_patient.answer_6_2 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 6 2 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 6 2 is not a number')
       end
       it 'answer_7_1が数字以外の場合' do
         @hdsr_log_patient.answer_7_1 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 7 1 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 7 1 is not a number')
       end
       it 'answer_7_2が数字以外の場合' do
         @hdsr_log_patient.answer_7_2 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 7 2 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 7 2 is not a number')
       end
       it 'answer_7_3が数字以外の場合' do
         @hdsr_log_patient.answer_7_3 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 7 3 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 7 3 is not a number')
       end
       it 'answer_8が数字以外の場合' do
         @hdsr_log_patient.answer_8 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 8 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 8 is not a number')
       end
       it 'answer_9が数字以外の場合' do
         @hdsr_log_patient.answer_9 = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Answer 9 is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Answer 9 is not a number')
       end
       it 'selection_seriesが数字以外の場合' do
         @hdsr_log_patient.selection_series = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Selection series is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Selection series is not a number')
       end
       it 'total_scoreが数字以外の場合' do
         @hdsr_log_patient.total_score = 'a'
         @hdsr_log_patient.valid?
-        expect(@hdsr_log_patient.errors.full_messages).to include("Total score is not a number")
+        expect(@hdsr_log_patient.errors.full_messages).to include('Total score is not a number')
       end
-
     end
   end
 end

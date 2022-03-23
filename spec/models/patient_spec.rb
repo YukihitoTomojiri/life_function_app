@@ -13,7 +13,7 @@ RSpec.describe Patient, type: :model do
 
     context '新規登録ができない場合' do
       it 'patient_first_nameが空白の場合' do
-        @patient.patient_first_name = ""
+        @patient.patient_first_name = ''
         @patient.valid?
         expect(@patient.errors.full_messages).to include("Patient first name can't be blank")
       end
@@ -65,7 +65,7 @@ RSpec.describe Patient, type: :model do
       it 'gender_idは数字以外の場合は登録できない' do
         @patient.gender_id = 'a'
         @patient.valid?
-        expect(@patient.errors.full_messages).to include("Gender is not a number")
+        expect(@patient.errors.full_messages).to include('Gender is not a number')
       end
       it 'care_certified_idが空白の場合は登録できない' do
         @patient.care_certified_id = ''
@@ -75,17 +75,17 @@ RSpec.describe Patient, type: :model do
       it 'care_certified_idが数字以外の場合は登録できない' do
         @patient.care_certified_id = ''
         @patient.valid?
-        expect(@patient.errors.full_messages).to include("Care certified is not a number")
+        expect(@patient.errors.full_messages).to include('Care certified is not a number')
       end
       it 'prefecture_idが1の場合は登録できない' do
         @patient.prefecture_id = 1
         @patient.valid?
         expect(@patient.errors.full_messages).to include("Prefecture can't be Blank")
       end
-      it 'userと紐ついていないと登録できない'do
+      it 'userと紐ついていないと登録できない' do
         @patient.user = nil
         @patient.valid?
-        expect(@patient.errors.full_messages).to include("User must exist")
+        expect(@patient.errors.full_messages).to include('User must exist')
       end
     end
   end

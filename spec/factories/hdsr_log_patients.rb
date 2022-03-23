@@ -18,7 +18,7 @@ FactoryBot.define do
     answer_7_3       { 1 }
     answer_8         { 1 }
     answer_9         { 1 }
-    answer_9_memo    { "ああああ" }
+    answer_9_memo    { 'ああああ' }
     total_score      { 1 }
     selection_series { 1 }
     association      :user

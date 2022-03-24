@@ -180,7 +180,9 @@
       </table>
 
       <div class="text-center">
-        <%= link_to "削除", patient_hdsr_log_path(@hdsr_log.id), method: :delete, class:"btn btn-danger ps-4 pe-4 mt-3 mb-3" %>
+        <% if current_user.id == @hdsr_log.user_id %>
+          <%= link_to "削除", patient_hdsr_log_path(@hdsr_log.id), method: :delete, class:"btn btn-danger ps-4 pe-4 mt-3 mb-3" %>
+        <% end %>
         <%= link_to "戻る",patient_path(@hdsr_log.patient_id), class:"btn btn-info ps-4 pe-4 mt-3 mb-3 ms-3" %>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="ZF12bMp9tpK7tc-vlodM" name="ページ1">
-        <mxGraphModel dx="1118" dy="680" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+        <mxGraphModel dx="666" dy="362" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -21,7 +21,10 @@
                 </mxCell>
                 <mxCell id="84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;startArrow=none;startFill=0;endArrow=none;endFill=0;elbow=vertical;" edge="1" parent="1" source="67">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="480" y="220" as="targetPoint"/>
+                        <mxPoint x="480" y="132" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="480" y="310"/>
+                        </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="67" value="利用者詳細ページ" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -60,7 +63,7 @@
                 <mxCell id="72" value="利用者登録ページ" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="499.5" y="100" width="170" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="76" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;startFill=0;endArrow=none;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="65">
+                <mxCell id="76" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;startFill=0;endArrow=none;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;rounded=0;" edge="1" parent="1" source="65">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="290" y="228" as="sourcePoint"/>
                         <mxPoint x="260" y="220" as="targetPoint"/>
@@ -71,7 +74,7 @@
                         <mxPoint x="300" y="238" as="sourcePoint"/>
                         <mxPoint x="480" y="130" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="480" y="220"/>
+                            <mxPoint x="480" y="218"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>

@@ -1,110 +1,110 @@
-# Life Function App
+# アプリケーション名
+Life Function App
 
----
-LifeFunctionAppは、実際にリリースするものではなく、ポートフォリオとして採用担当者様にご覧いただくことを目的としているソリューションです。個人情報保護や著作権に関して考慮されていません。
+# アプリケーションの概要
+LifeFunctionAppは、医療従事者が認知機能評価をipadやパソコンで管理できるアプリです。
 
------
-目次
-1. ペルソナ
-2. ユーザーストーリー
-3. テーブル設計
-4. ER図
+# URL
+https://life-function-app.herokuapp.com/  
+Basic認証が必要です。
+- Basic認証ID: admin
+- Basic認証パスワード: 2222
+# テスト用アカウント
+- メールアドレス: test@test.com
+- パスワード: a00000
 
------
-# 1. ペルソナ
-- 職業は「医療・介護従事者」
-- 医療・介護従事者の方を考えているので「性別は女性」「年齢は20~60代」
+# 利用方法
 
------
-# 2. ユーザーストーリー  
+## 1. ログイン
+[![Image from Gyazo](https://i.gyazo.com/324beec0227f96ad8f32a0bc6154cb2c.png)](https://gyazo.com/324beec0227f96ad8f32a0bc6154cb2c)
+1. テスト用アカウントのメールアドレス、パスワードを入力します。
+2. 「ログイン」ボタンを押します。
+3. 利用者一覧ページに遷移します。
 
-- ユーザーの問題点  
-  - 外来受診や入院時及び施設入所時の認知機能検査、運動機能検査に時間が掛かる。
-  - 認知症があるのか分からないが、1人暮らしで生活をしていたので患者が服薬管理をした。しかし、適切に服薬できていなかった。
-  - 下肢筋力低下があるが、ポータブルトイレを設置し、夜間転倒してしまった。  
+## 2. 患者登録
+[![Image from Gyazo](https://i.gyazo.com/7c13f84941cb71e0278cdeab1c96324d.gif)](https://gyazo.com/7c13f84941cb71e0278cdeab1c96324d)
+1. 利用者一覧ページから右上にある「利用者登録」ボタンを押します。
+2. 利用者の情報を入力します。
+3. 「登録」ボタンを押します。
+4. 利用者一覧ページに遷移します。
 
-- 課題解決
-  - 検査時間の短縮が必要。
-  - PCでもタブレットでも情報共有される。
-  - ipadなどタブレット端末を利用したアプリケーションで準備物を少なくする。
+## 3. 評価を投稿する
+[![Image from Gyazo](https://i.gyazo.com/1a1c2d2de035bc32dcbb6e20bc63f583.gif)](https://gyazo.com/1a1c2d2de035bc32dcbb6e20bc63f583)
+1. 利用者一覧ページから、評価する利用者を押します
+2. 利用者詳細ページに遷移します。
+3. 右上の「評価する」ボタンを押します。
+4. 評価ページに遷移します。
+5. 評価項目を入力します。  
+6. 「評価終了」ボタンを押します。
+7. 利用者一覧ページに遷移します。
 
-- 解決に必要な機能  
-  - 同一施設ならば利用者の一覧を表示し検索できる機能
-  - ユーザー（医療介護者）と利用者の管理機能
-  - 検査結果を比較できる機能
 
-  - UIについて準備物の簡素化についての機能
-    - ipadなどタブレット端末を意識したUI設計
-    - JavaScriptを用いてタイマーやストップウォッチ機能
-    - 設問の内容上、画像を表示し、一時的に隠し、クリックしたら再表示できる機能
-    - 音声録音機能
+## 利用者情報を削除する
+1. 利用者一覧ページから、削除したい利用者を押します。
+2. 利用者詳細ページで中央下にある「削除」ボタンを押します。
+3. 削除完了ページに遷移します。  
+＊利用者情報を削除すると紐付けられた評価の投稿も削除されます。
 
----
-# 3. テーブル設計
-## Users table
-| Columns          | Type   | Options                   |
-|------------------|--------|---------------------------|
-| first_name       | string | null: false               |
-| last_name        | string | null: false               |
-| first_name_kana  | string | null: false               |
-| last_name_kana   | string | null: false               |
-| birthday         | date   | null: false               |
-| email            | string | null: false, unique: true |
-| password         | string | null: false               |
-| facility         | string | null: false               |
-| affiliation      | string |                           |
-## Association
-- has_many: patients
-- has_many: Hasegawa_dimentia_scale
------
-## Patients table
-| Columns                 | Type      | Options                        |
-|-------------------------|-----------|--------------------------------|
-| patient_first_name      | string    | null: false                    |
-| patient_last_name       | string    | null: false                    |
-| patient_first_name_kana | string    | null: false                    |
-| patient_last_name_kana  | string    | null: false                    |
-| gender_id               | integer   | null: false                    |
-| birthday                | date      | null: false                    |
-| care_certified_id       | integer   | null: false                    |
-| prefecture_id           | integer   | null: false                    |
-| user                    | reference | null: false, foreign_key: true |
-## Association
-- has_many: Hasegawa_dimentia_scale
-- belongs_to: users
-- belongs_to_active_hash: gender
-- belongs_to_active_hash: care_certified
-- belongs_to_active_hash: prefecture
------
-## Hasegawa_dimentia_scale table
-| Columns           | Type      | Options                        |
-|-------------------|-----------|--------------------------------|
-| testing_date      | date      | null: false                    |
-| testing_place     | string    |                                |
-| answer_1          | integer   | null: false                    |
-| answer_2_1        | integer   | null: false                    |
-| answer_2_2        | integer   | null: false                    |
-| answer_2_3        | integer   | null: false                    |
-| answer_2_4        | integer   | null: false                    |
-| answer_3          | integer   | null: false                    |
-| selection_series  | integer   | null: false                    |
-| answer_4_1        | integer   | null: false                    |
-| answer_4_2        | integer   | null: false                    |
-| answer_4_3        | integer   | null: false                    |
-| answer_5_1        | integer   | null: false                    |
-| answer_5_2        | integer   | null: false                    |
-| answer_6_1        | integer   | null: false                    |
-| answer_6_2        | integer   | null: false                    |
-| answer_7_1        | integer   | null: false                    |
-| answer_7_2        | integer   | null: false                    |
-| answer_7_3        | integer   | null: false                    |
-| answer_8          | integer   | null: false                    |
-| answer_9          | integer   | null: false                    |
-| answer_9_memo     | integer   |                                |
-| total_score       | integer   | null: false                    |
-| user              | reference | null: false, foreign_key: true |
-| patient           | reference | null: false, foreign_key: true |
-### Association
-- belongs_to: patient
-- belongs_to: users
------
+## 評価の投稿を削除する
+1. 利用者詳細ページの「認知機能評価日一覧」の評価日を選択します。
+2. 評価詳細ページに遷移します。
+3. 下部にある「削除ボタン」を押します。
+4. 削除完了ページに遷移します。  
+＊評価の投稿のみを削除します。利用者情報は削除されません。
+
+# アプリケーションを作成した背景
+病院勤務をしている中で、認知症の方と接する機会が非常に多いです。  
+介護保険を申請するにも、薬の内服管理や運動の自主トレーニングを指導するにも理解ができるのか判断材料が必要となります。
+業務の中で、紙で管理する事が多く保管場所や保管する物を用意する必要があります。  
+検査結果を前回と見比べる時に探す手間や紙カルテならば病棟まで確認しに行く時間的コストが掛かっています。そこで電子化し移動することや探すといった時間的コスト、場所を取ってしまう物理的なコストを削減するため、このアプリケーションを作成することにしました。  
+ 病院は女性職員が多く、地方の病院では20~70歳代前後まで仕事をしています。パソコンなどの機械が不得意な方が多い為、できるだけシンプルな使い方になるようにデザインしました。
+# 洗い出した要件
+https://docs.google.com/spreadsheets/d/1vHqSsSCL3iDxy9MhST05MTHK74BUtC9JHKWbFE-3Lto/edit?usp=sharing
+
+# 実装した機能についてのGIFおよびその説明
+- 評価投稿ページでは合計点数によって、コメントの表示を変更し、背景色を変化するようにしました。
+[![Image from Gyazo](https://i.gyazo.com/f2d7902f2f849aaa3088cb75297dfca3.gif)](https://gyazo.com/f2d7902f2f849aaa3088cb75297dfca3)
+- 患者詳細ページの評価一覧は件数が多くなっても表示しやすいように、オーバーフローで表示しました。
+[![Image from Gyazo](https://i.gyazo.com/8fda5bbf13ddd36bf52b9909a30a2dcb.gif)](https://gyazo.com/8fda5bbf13ddd36bf52b9909a30a2dcb)
+
+# 実装予定の機能
+- 利用者情報編集機能
+- 評価情報編集機能
+- 評価ページに画像をポップアップで表示する機能
+- 事業所毎に利用者が表示される機能
+
+# データベース設計
+[![Image from Gyazo](https://i.gyazo.com/e245b802312f8c074926d7a3cc9d4982.png)](https://gyazo.com/e245b802312f8c074926d7a3cc9d4982)
+
+# 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/2d1df8eccdad4bfcc7980e3393dac1e0.png)](https://gyazo.com/2d1df8eccdad4bfcc7980e3393dac1e0)
+
+# 開発環境
+- Visual studio code
+- Ruby       2.6.5  
+- Rails      6.0.0  
+- mysql2     0.5.3  
+- puma       3.11  
+- sass-rails 5  
+- webpacker  4.0  
+- tubolinks  5  
+- jbuilder   2.7  
+- bootsnap   1.4.2
+
+### テストコード
+- rspec-rails 4.0.0  
+- factry_bot_rails  
+- faker  
+- gimei 
+
+### 自動修正
+- rubocop  
+
+### その他
+- pry-rails  
+- devise
+- active_hash
+- bootstrap 5.0.2
+
+### 本番環境
+- heroku

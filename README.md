@@ -77,7 +77,7 @@ https://docs.google.com/spreadsheets/d/1vHqSsSCL3iDxy9MhST05MTHK74BUtC9JHKWbFE-3
 [![Image from Gyazo](https://i.gyazo.com/e245b802312f8c074926d7a3cc9d4982.png)](https://gyazo.com/e245b802312f8c074926d7a3cc9d4982)
 
 # 画面遷移図
-[![Image from Gyazo](https://i.gyazo.com/2d1df8eccdad4bfcc7980e3393dac1e0.png)](https://gyazo.com/2d1df8eccdad4bfcc7980e3393dac1e0)
+[![Image from Gyazo](https://i.gyazo.com/307fa25e3397161a43a89ed79a3d390a.png)](https://gyazo.com/307fa25e3397161a43a89ed79a3d390a)
 
 # 開発環境
 - Visual studio code

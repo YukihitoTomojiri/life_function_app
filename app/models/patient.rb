@@ -4,7 +4,8 @@ class Patient < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :gender
   belongs_to_active_hash :care_certified
-  has_one :hdsr_log
+  has_many :hdsr_logs, dependent: :destroy
+  has_many :hdsrs, through: :hdsr_logs, dependent: :destroy
   with_options presence: true do
     validates :patient_first_name,      format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
     validates :patient_last_name,       format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }

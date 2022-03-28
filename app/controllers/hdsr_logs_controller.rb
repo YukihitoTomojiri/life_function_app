@@ -1,5 +1,4 @@
 class HdsrLogsController < ApplicationController
-  # before_action :authenticate_user!, only: [:index]
   before_action :set_patient, only: [:index, :create]
 
   def index
@@ -18,7 +17,7 @@ class HdsrLogsController < ApplicationController
 
   def show
     @hdsr_log = HdsrLog.find(params[:id])
-    @hdsr = Hdsr.find_by(hdsr_log_id: @hdsr_log.id)
+    @hdsr = Hdsr.find_by(id: @hdsr_log.id)
   end
 
   def destroy

@@ -1,5 +1,5 @@
 class HdsrLog < ApplicationRecord
   belongs_to :user
   belongs_to :patient
-  has_one    :hdsr
+  has_many   :hdsr, dependent: :destroy
 end

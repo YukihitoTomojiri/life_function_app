@@ -21,7 +21,7 @@
       
       <tbody>
         <% @patients.each do |patient| %>
-          <div>
+          <div class="position-relative">
           <tr class="position-relative align-middle fs-5"  height="80">
             <td><%= image_tag("account_icon.svg", size: '80x60', class:"flex-shrink-0") %></td>
             <td><%= link_to patient.patient_last_name + " " + patient.patient_first_name + " 様", patient_path(patient.id), class:"text-decoration-none stretched-link text-reset" %></td>

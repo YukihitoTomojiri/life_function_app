@@ -45,7 +45,7 @@ function post (){
       message.innerHTML = "認知症の疑いがあります。早めに病院を受診しましょう。";
       renderMessageBox.style.backgroundColor='#EE0000';
     }else if(total >= 20){
-      message.innerHTML = "正常範囲です。心配な方は、早めに病院に相談しましょう。";
+      message.innerHTML = "正常範囲ですが、心配な方は早めに病院に相談しましょう。";
       renderMessageBox.style.backgroundColor='lightgreen';
     };
 };

@@ -8,24 +8,24 @@
     <table class="detail-table">
       <tbody>
         <tr>
-          <th class="detail-item">担当者</th>
-          <td class="detail-value"><%= @patient.user.last_name %></td>
+          <th class="detail-item fs-5">担当者</th>
+          <td class="detail-value text-center fs-4"><%= @patient.user.last_name + " " + @patient.user.first_name %></td>
         </tr>
         <tr>
-          <th class="detail-item">誕生日</th>
-          <td class="detail-value"><%= @patient.birthday %></td>
+          <th class="detail-item fs-5">誕生日</th>
+          <td class="detail-value text-center fs-4"><%= @patient.birthday.strftime("%Y年 %m月 %d日") %></td>
         </tr>
         <tr>
-          <th class="detail-item">性別</th>
-          <td class="detail-value"><%= @patient.gender.name %></td>
+          <th class="detail-item fs-5">性別</th>
+          <td class="detail-value text-center fs-4"><%= @patient.gender.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">介護認定</th>
-          <td class="detail-value"><%= @patient.care_certified.name %></td>
+          <th class="detail-item fs-5">介護認定</th>
+          <td class="detail-value text-center fs-4"><%= @patient.care_certified.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">住所</th>
-          <td class="detail-value"><%= @patient.prefecture.name %></td>
+          <th class="detail-item fs-5">住所</th>
+          <td class="detail-value text-center fs-4"><%= @patient.prefecture.name %></td>
         </tr>
       </tbody>
     </table>
@@ -38,10 +38,10 @@
       </h3>
       <%= link_to "評価する", patient_hdsr_logs_path(@patient.id), class:"btn btn-info ps-4 pe-4 mb-1" %>
     </div>
-    <div class="overflow-auto" style="height: 300px;">
+    <div class="overflow-auto" style="height: 400px;">
       <% @hdsr_logs.each do |hdsr_log| %>
-        <div class="rounded-pill border border-3 p-1 table table-striped table-hover mb-1 d-flex position-relative ">
-          <h6 class="mx-auto">
+        <div class="rounded-pill border border-3 table table-striped table-hover mb-1 p-1 d-flex position-relative" style="height: 75px;">
+          <h6 class="mx-auto mt-3 fs-4">
             <%= link_to hdsr_log.created_at.strftime("%Y年 %m月 %d日") , patient_hdsr_log_path(@patient.id, hdsr_log.id), class:"text-decoration-none stretched-link" %>
           </h6>
         </div>

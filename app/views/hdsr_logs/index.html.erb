@@ -308,23 +308,25 @@
               <%= f.text_area :answer_9_memo, class:"hdsr-text", placeholder:"例）キャベツ、にんじんなど"%>
             </td>
             <td valign="middle">
-              <div class="btn-group row align-items " role="group" aria-label="Basic radio toggle button group">
-                <input type="hidden" name="hdsr_log_patient[answer_9]" value="">
+              <div class="d-flex flex-column bd-highlight">
+                <div class="btn-group row align-items " role="group" aria-label="Basic radio toggle button group">
+                  <input type="hidden" name="hdsr_log_patient[answer_9]" value="">
+                  <div class="d-flex justify-content-between">
+                  <input class="btn-check" id="answer-9-1" type="radio" value="1" name="hdsr_log_patient[answer_9]" autocomplete="off" checked>
+                  <label class="btn btn-outline-primary ms-3 flex-fill" for="answer-9-1">0</label>
+                  <input class="btn-check" id="answer-9-2" type="radio" value="2" name="hdsr_log_patient[answer_9]" autocomplete="off">
+                  <label class="btn btn-outline-primary flex-fill" for="answer-9-2">1</label>
+                  <input class="btn-check" id="answer-9-3" type="radio" value="3" name="hdsr_log_patient[answer_9]" autocomplete="off">
+                  <label class="btn btn-outline-primary flex-fill" for="answer-9-3">2</label>
+                </div>
                 <div class="d-flex justify-content-between">
-                <input class="btn-check" id="answer-9-1" type="radio" value="1" name="hdsr_log_patient[answer_9]" autocomplete="off" checked>
-                <label class="btn btn-outline-primary ms-3 flex-fill" for="answer-9-1">0</label>
-                <input class="btn-check" id="answer-9-2" type="radio" value="2" name="hdsr_log_patient[answer_9]" autocomplete="off">
-                <label class="btn btn-outline-primary flex-fill" for="answer-9-2">1</label>
-                <input class="btn-check" id="answer-9-3" type="radio" value="3" name="hdsr_log_patient[answer_9]" autocomplete="off">
-                <label class="btn btn-outline-primary flex-fill" for="answer-9-3">2</label>
-              </div>
-              <div class="d-flex justify-content-between">
-                <input class="btn-check" id="answer-9-4" type="radio" value="4" name="hdsr_log_patient[answer_9]" autocomplete="off">
-                <label class="btn btn-outline-primary ms-3 flex-fill" for="answer-9-4">3</label>
-                <input class="btn-check" id="answer-9-5" type="radio" value="5" name="hdsr_log_patient[answer_9]" autocomplete="off">
-                <label class="btn btn-outline-primary flex-fill" for="answer-9-5">4</label>
-                <input class="btn-check" id="answer-9-6" type="radio" value="6" name="hdsr_log_patient[answer_9]" autocomplete="off">
-                <label class="btn btn-outline-primary flex-fill" for="answer-9-6">5</label>
+                  <input class="btn-check" id="answer-9-4" type="radio" value="4" name="hdsr_log_patient[answer_9]" autocomplete="off">
+                  <label class="btn btn-outline-primary ms-3 flex-fill" for="answer-9-4">3</label>
+                  <input class="btn-check" id="answer-9-5" type="radio" value="5" name="hdsr_log_patient[answer_9]" autocomplete="off">
+                  <label class="btn btn-outline-primary flex-fill" for="answer-9-5">4</label>
+                  <input class="btn-check" id="answer-9-6" type="radio" value="6" name="hdsr_log_patient[answer_9]" autocomplete="off">
+                  <label class="btn btn-outline-primary flex-fill" for="answer-9-6">5</label>
+                </div>
               </div>
             </td>
           </tr>
